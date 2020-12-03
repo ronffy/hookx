@@ -2,12 +2,12 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:20:09
- * @LastEditTime 2020-12-03 16:18:14
+ * @LastEditTime 2020-12-03 16:29:21
  * @LastEditors ronffy
  */
 import { useHistory } from 'react-router-dom'
 import Button from '../components/Button';
-import { connect } from '../hookx';
+import { connect } from 'react-redux';
 
 const Total = ({ list }) => {
   const history = useHistory();

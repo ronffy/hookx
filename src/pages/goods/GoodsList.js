@@ -2,11 +2,11 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:20:09
- * @LastEditTime 2020-12-03 15:37:21
+ * @LastEditTime 2020-12-03 16:29:46
  * @LastEditors ronffy
  */
 import { useRequest } from 'ahooks';
-import { connect } from '../../hookx/hookx';
+import { connect } from 'react-redux';
 import { asyncList } from '../../store/effects';
 import GoodContainer from './GoodContainer';
 import './GoodsList.css';

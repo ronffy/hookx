@@ -2,7 +2,7 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:42:16
- * @LastEditTime 2020-12-03 16:15:22
+ * @LastEditTime 2020-12-03 16:29:06
  * @LastEditors ronffy
  */
 import React, { Profiler, useCallback, useMemo } from 'react';
@@ -12,7 +12,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from './App';
 import Dynamic from './components/Dynamic'
 import createRoutes from './createRoutes';
-import { Provider } from './hookx/hookx';
+import { Provider } from 'react-redux';
 import store from './store'
 
 const Routers = () => {
