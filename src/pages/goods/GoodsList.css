@@ -1,0 +1,12 @@
+.page-detail .detail-list {
+  padding: 10px 15px;
+}
+
+.page-detail .detail-list .detail-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-detail .detail-list .detail-list-item i {
+  cursor: pointer;
+}

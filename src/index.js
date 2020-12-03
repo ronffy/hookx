@@ -1,12 +1,19 @@
+/**
+ * @description 
+ * @author ronffy
+ * @Date 2020-11-11 15:47:53
+ * @LastEditTime 2020-11-27 17:04:48
+ * @LastEditors ronffy
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Routers from './Routers';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routers />
   </React.StrictMode>,
   document.getElementById('root')
 );
