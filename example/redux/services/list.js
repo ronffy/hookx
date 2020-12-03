@@ -2,7 +2,7 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:12:30
- * @LastEditTime 2020-12-03 17:45:18
+ * @LastEditTime 2020-11-30 17:35:35
  * @LastEditors ronffy
  */
 import produce from 'immer';
@@ -53,7 +53,7 @@ export function fetchList() {
   return new Promise((res, rej) => {
     setTimeout(() => {
       res(packData(list.get()))
-    }, 1000);
+    }, 400);
   })
 }
 

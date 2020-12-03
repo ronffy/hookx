@@ -2,7 +2,7 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:20:09
- * @LastEditTime 2020-12-03 17:46:12
+ * @LastEditTime 2020-12-03 16:29:46
  * @LastEditors ronffy
  */
 import { useRequest } from 'ahooks';
@@ -11,14 +11,14 @@ import { asyncList } from '../../store/effects';
 import GoodContainer from './GoodContainer';
 import './GoodsList.css';
 
-const GoodsList = ({ list, onAsyncList }) => {
-  const { loading } = useRequest(onAsyncList);
+const GoodsList = ({ list }) => {
+  const { loading } = useRequest(asyncList);
 
   return (
     <div className="detail-list">
       {
         loading
-          ? <div>loading</div>
+          ? <span>列表加载中</span>
           : (
             list.map(({ id, name, count }) => (
               <GoodContainer
@@ -34,14 +34,12 @@ const GoodsList = ({ list, onAsyncList }) => {
   );
 }
 
-const mapStateToProps = ({ listApp }) => ({
-  list: listApp.list,
-})
+const mapStateToProps = (state) => {
+  // debugger
+  return ({
+    list: state.list,
+  })
 
-const mapDispathToProps = (dispatch) => ({
-  async onAsyncList() {
-    return dispatch(asyncList());
-  }
-})
+}
 
-export default connect(mapStateToProps, mapDispathToProps)(GoodsList);
+export default connect(mapStateToProps)(GoodsList);

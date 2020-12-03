@@ -2,7 +2,7 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:20:09
- * @LastEditTime 2020-12-03 17:00:55
+ * @LastEditTime 2020-12-03 16:29:21
  * @LastEditors ronffy
  */
 import { useHistory } from 'react-router-dom'
@@ -28,8 +28,8 @@ const Total = ({ list }) => {
   );
 }
 
-const mapStateToProps = ({ listApp }) => ({
-  list: listApp.list,
+const mapStateToProps = (state) => ({
+  list: state.list,
 })
 
 // export default Total

@@ -2,15 +2,20 @@
  * @description 
  * @author ronffy
  * @Date 2020-12-02 20:11:31
- * @LastEditTime 2020-12-03 16:30:04
+ * @LastEditTime 2020-12-03 18:16:14
  * @LastEditors ronffy
  */
-import { createStore } from 'redux';
-import reducer from './reducer';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers';
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 
-const store = createStore(reducer, {
-  list: []
-});
+const store = createStore(
+  reducers, 
+  composeWithDevTools(
+    applyMiddleware(thunk)  
+  )
+);
 
 export const dispatch = store.dispatch;
 
