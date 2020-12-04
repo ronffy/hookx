@@ -2,10 +2,11 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 15:12:30
- * @LastEditTime 2020-12-03 17:45:18
+ * @LastEditTime 2020-12-04 18:47:52
  * @LastEditors ronffy
  */
 import produce from 'immer';
+import request from '../utils/request';
 
 const list = {
   data: [
@@ -40,39 +41,19 @@ const list = {
   }
 }
 
-// 将数据包装成后端返回的数据格式
-function packData(data) {
-  return {
-    data,
-    success: true,
-    msg: '',
-  }
-}
-
 export function fetchList() {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(packData(list.get()))
-    }, 1000);
-  })
+  return request(list.get());
 }
 
 // 增加数量
 export function fetchIncreaseCount(id, count = 1) {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      list.changeCountById(id, count);
-      res(packData(id))
-    }, 400);
-  })
+  list.changeCountById(id, count);
+  return request(id);
 }
 
 // 减少数量
 export function fetchDecreaseCount(id, count = -1) {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      list.changeCountById(id, count);
-      res(packData(id))
-    }, 400);
-  })
+  list.changeCountById(id, count);
+  // 模拟报错场景
+  return request(id, id === '2' ? true : false);
 }

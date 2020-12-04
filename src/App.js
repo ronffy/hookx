@@ -2,7 +2,7 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-11 15:47:53
- * @LastEditTime 2020-11-30 16:09:11
+ * @LastEditTime 2020-12-04 16:55:34
  * @LastEditors ronffy
  */
 import React from 'react';
@@ -15,7 +15,6 @@ function App({
   location,
   history,
 }) {
-
   return (
     <div>
       <Layout>

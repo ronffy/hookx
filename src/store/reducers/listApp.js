@@ -2,26 +2,25 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-27 14:56:30
- * @LastEditTime 2020-12-03 18:53:18
+ * @LastEditTime 2020-12-04 17:17:29
  * @LastEditors ronffy
  */
 import produce from 'immer';
-import { combineReducers } from 'redux';
 
-const { INCREASE, DECREASE, QUERY_LIST } = require("./createAction");
+const { createIncrease, createDecrease, createList } = require("../createAction");
 
 const defaultState = {
   list: [],
 }
 const listApp = produce((state = defaultState, { type, payload, error }) => {
   switch (type) {
-    case QUERY_LIST:
+    case `${createList}`:
       const { list } = payload;
       state.list = list;
       break;
 
-    case INCREASE:
-    case DECREASE:
+    case `${createIncrease}`:
+    case `${createDecrease}`:
       const { id, count } = payload;
       for (const item of state.list) {
         if (item.id === `${id}`) {
@@ -36,6 +35,4 @@ const listApp = produce((state = defaultState, { type, payload, error }) => {
   }
 })
 
-export default combineReducers({
-  listApp
-})
+export default listApp

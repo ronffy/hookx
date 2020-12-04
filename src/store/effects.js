@@ -2,17 +2,15 @@
  * @description 
  * @author ronffy
  * @Date 2020-12-03 14:22:35
- * @LastEditTime 2020-12-03 17:37:51
+ * @LastEditTime 2020-12-04 18:48:58
  * @LastEditors ronffy
  */
 import { fetchDecreaseCount, fetchIncreaseCount, fetchList } from "../services/list";
 import { 
   createIncrease, 
-  createIncreaseError, 
   createList, 
-  createListError,
   createDecrease,
-  createDecreaseError,
+  createGlobalError,
 } from "./createAction";
 
 export const asyncList = () => {
@@ -22,7 +20,7 @@ export const asyncList = () => {
     if (res.success) {
       action = createList(res.data);
     } else {
-      action = createListError(res.msg);
+      action = createGlobalError(res.msg);
     }
     dispatch(action);
   }
@@ -35,7 +33,7 @@ export const asyncIncrease = (id, count = 1) => {
     if (res.success) {
       action = createIncrease(id, count);
     } else {
-      action = createIncreaseError(res.msg);
+      action = createGlobalError(res.msg);
     }
     dispatch(action);
   }
@@ -48,7 +46,7 @@ export const asyncDecrease = (id, count = -1) => {
     if (res.success) {
       action = createDecrease(id, count);
     } else {
-      action = createDecreaseError(res.msg);
+      action = createGlobalError(res.msg);
     }
     dispatch(action);
   }

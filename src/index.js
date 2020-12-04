@@ -2,7 +2,7 @@
  * @description 
  * @author ronffy
  * @Date 2020-11-11 15:47:53
- * @LastEditTime 2020-11-27 17:04:48
+ * @LastEditTime 2020-12-04 10:13:48
  * @LastEditors ronffy
  */
 import React from 'react';
@@ -12,9 +12,7 @@ import Routers from './Routers';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routers />
-  </React.StrictMode>,
+  <Routers />,
   document.getElementById('root')
 );
 
